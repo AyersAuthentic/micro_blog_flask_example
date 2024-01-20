@@ -10,6 +10,8 @@ load_dotenv()
 
 def create_app():
     app = Flask(__name__)
+    uri = os.getenv("MONGODB_URI")
+    print(uri)
     client = MongoClient(os.getenv("MONGODB_URI"))
     app.db = client.microblog
 
